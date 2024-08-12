@@ -1,33 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('nav ul li a');
+// scripts.js
 
-    for (const link of links) {
-        link.addEventListener('click', smoothScroll);
+// Smooth scroll to top
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Show Scroll-to-Top button when scrolling down
+window.onscroll = function() {
+    var scrollBtn = document.getElementById("scrollBtn");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
     }
+};
 
-    function smoothScroll(event) {
-        event.preventDefault();
-        const targetId = event.currentTarget.getAttribute("href") === "#" ? "header" : event.currentTarget.getAttribute("href");
-        const targetPosition = document.querySelector(targetId).offsetTop;
-        const startPosition = window.pageYOffset;
-        const distance = targetPosition - startPosition;
-        const duration = 800;
-        let start = null;
-
-        window.requestAnimationFrame(step);
-
-        function step(timestamp) {
-            if (!start) start = timestamp;
-            const progress = timestamp - start;
-            window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
-            if (progress < duration) window.requestAnimationFrame(step);
-        }
-    }
-
-    function easeInOutCubic(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t * t + b;
-        t -= 2;
-        return c / 2 * (t * t * t + 2) + b;
-    }
+// Animate skill bars
+document.addEventListener("DOMContentLoaded", function() {
+    var skillLevels = document.querySelectorAll(".skill-level");
+    skillLevels.forEach(function(skill) {
+        skill.style.width = skill.getAttribute("style").split(":")[1];
+    });
 });
