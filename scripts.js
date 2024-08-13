@@ -1,24 +1,27 @@
-// scripts.js
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 
-// Smooth scroll to top
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Show Scroll-to-Top button when scrolling down
-window.onscroll = function() {
-    var scrollBtn = document.getElementById("scrollBtn");
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollBtn.style.display = "block";
-    } else {
-        scrollBtn.style.display = "none";
-    }
+// Intersection Observer for animations on scroll
+const observerOptions = {
+    threshold: 0.1
 };
 
-// Animate skill bars
-document.addEventListener("DOMContentLoaded", function() {
-    var skillLevels = document.querySelectorAll(".skill-level");
-    skillLevels.forEach(function(skill) {
-        skill.style.width = skill.getAttribute("style").split(":")[1];
+const sectionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target);
+        }
     });
+}, observerOptions);
+
+document.querySelectorAll('section').forEach(section => {
+    sectionObserver.observe(section);
 });
