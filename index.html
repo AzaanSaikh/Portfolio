@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Custom Site</title>
+    <title>Kaif Ahmad - Cybersecurity Professional</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -12,42 +13,80 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#services">Skills</a></li>
+                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
     </header>
+
+    <div class="quick-access">
+        <a href="#home" class="quick-link">Home</a>
+        <a href="#about" class="quick-link">About</a>
+        <a href="#services" class="quick-link">Skills</a>
+        <a href="#blog" class="quick-link">Blog</a>
+        <a href="#contact" class="quick-link">Contact</a>
+    </div>
 
     <section id="home">
         <div class="intro">
-            <h1>Your Journey Starts Here</h1>
-            <p>Empowering your digital success.</p>
+            <h1>Kaif Ahmad</h1>
+            <p>Dedicated and motivated cybersecurity professional specializing in penetration testing.</p>
             <a href="#contact" class="btn">Learn More</a>
         </div>
     </section>
 
     <section id="about">
         <div class="content">
-            <h2>About Our Team</h2>
-            <p>We are a group of professionals dedicated to providing top-tier cybersecurity solutions and training to our clients.</p>
+            <h2>About Me</h2>
+            <p>I am a cybersecurity professional with a strong interest in penetration testing. I am equipped with foundational knowledge in ethical hacking, vulnerability scanning, and network security. Proficient in using basic security tools and scripting for automation, I possess strong problem-solving skills, a commitment to continuous learning, and the ability to work effectively in team environments. I am eager to apply and expand my technical skills in a dynamic cybersecurity role.</p>
         </div>
     </section>
 
     <section id="services">
-        <h2>What We Offer</h2>
+        <h2>Skills</h2>
         <div class="service-cards">
             <div class="card">
-                <h3>Comprehensive Testing</h3>
-                <p>We identify and mitigate vulnerabilities in your systems efficiently.</p>
+                <h3>Penetration Testing</h3>
+                <p>Experience with identifying and mitigating vulnerabilities in various systems efficiently.</p>
             </div>
             <div class="card">
-                <h3>Expert Training</h3>
-                <p>Our training programs are designed to educate your team on the latest security practices.</p>
+                <h3>Vulnerability Analysis</h3>
+                <p>Proficient in scanning and analyzing systems to detect potential security issues.</p>
             </div>
             <div class="card">
-                <h3>Custom Solutions</h3>
-                <p>We offer consulting to create custom security solutions for your specific needs.</p>
+                <h3>Networking</h3>
+                <p>Strong knowledge of networking protocols and security measures.</p>
             </div>
+            <div class="card">
+                <h3>Linux & Windows</h3>
+                <p>Proficient in using both Linux and Windows environments for security operations.</p>
+            </div>
+            <div class="card">
+                <h3>Programming</h3>
+                <p>Skilled in Python, C, and BASH scripting for security tool development and automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Blog</h2>
+        <div id="blog-container">
+            <!-- Blog posts will be dynamically added here -->
+        </div>
+        <div id="admin-controls">
+            <h3>Add New Post</h3>
+            <form id="new-post-form">
+                <input type="text" id="new-post-title" placeholder="Title">
+                <textarea id="new-post-content" placeholder="Content"></textarea>
+                <button type="submit" class="btn">Add Post</button>
+            </form>
         </div>
     </section>
 
@@ -65,7 +104,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 My Custom Site. All rights reserved.</p>
+        <p>&copy; 2024 Kaif Ahmad. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
