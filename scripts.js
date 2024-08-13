@@ -1,27 +1,59 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+darkModeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
 });
 
-// Intersection Observer for animations on scroll
-const observerOptions = {
-    threshold: 0.1
-};
+// Blog Post Handling
+const blogContainer = document.getElementById('blog-container');
+const newPostForm = document.getElementById('new-post-form');
 
-const sectionObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-        }
+let posts = [
+    { title: "Welcome to Our Blog", content: "This is our first post. Stay tuned for more updates!" }
+];
+
+function displayPosts() {
+    blogContainer.innerHTML = '';
+    posts.forEach((post, index) => {
+        const postElement = document.createElement('div');
+        postElement.className = 'blog-post';
+        postElement.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+            <button onclick="editPost(${index})">Edit</button>
+            <button onclick="deletePost(${index})">Delete</button>
+        `;
+        blogContainer.appendChild(postElement);
     });
-}, observerOptions);
+}
 
-document.querySelectorAll('section').forEach(section => {
-    sectionObserver.observe(section);
+newPostForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newTitle = document.getElementById('new-post-title').value;
+    const newContent = document.getElementById('new-post-content').value;
+    if (newTitle && newContent) {
+        posts.push({ title: newTitle, content: newContent });
+        displayPosts();
+        newPostForm.reset();
+    }
 });
+
+function editPost(index) {
+    const newTitle = prompt("Edit title:", posts[index].title);
+    const newContent = prompt("Edit content:", posts[index].content);
+    if (newTitle && newContent) {
+        posts[index].title = newTitle;
+        posts[index].content = newContent;
+        displayPosts();
+    }
+}
+
+function deletePost(index) {
+    if (confirm("Are you sure you want to delete this post?")) {
+        posts.splice(index, 1);
+        displayPosts();
+    }
+}
+
+// Initial Display of Blog Posts
+displayPosts();
