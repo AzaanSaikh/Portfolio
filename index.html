@@ -1,99 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaif Ahmad - Cybersecurity Professional</title>
+    <title>My Custom Site</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@300;400&display=swap"
-        rel="stylesheet">
 </head>
-
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Scroll-to-Top Button -->
-    <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">Top</button>
-
-    <div class="header-container">
-        <h1>Kaif Ahmad</h1>
-        <h2>Cybersecurity Professional</h2>
-        <p>Dedicated to protecting digital assets through expert penetration testing and vulnerability analysis.</p>
-    </div>
-
-    <div class="profile-section">
-        <img src="profile-image.jpg" alt="Kaif Ahmad" class="profile-img">
-        <p>I'm a cybersecurity professional with a strong interest in penetration testing. My expertise includes ethical hacking, network security, and vulnerability analysis. Equipped with hands-on experience in various security tools and scripting, I am committed to advancing my skills in a dynamic cybersecurity environment.</p>
-    </div>
-
-    <div class="section">
-        <h2>Experience</h2>
-        <div class="experience-item">
-            <h3>Cyber Security Trainer</h3>
-            <p>TechDefence Labs Solutions Private Limited • Ahmedabad, Gujarat</p>
-            <p>Feb 2024 - Present</p>
-            <p>Designed and conducted customized cybersecurity training programs, developed practical lab exercises, and provided mentorship to help learners advance in their cybersecurity careers.</p>
+    <section id="home">
+        <div class="intro">
+            <h1>Your Journey Starts Here</h1>
+            <p>Empowering your digital success.</p>
+            <a href="#contact" class="btn">Learn More</a>
         </div>
-    </div>
+    </section>
 
-    <div class="section">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-            <li>
-                <span>Penetration Testing</span>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 90%;"></div>
-                </div>
-            </li>
-            <li>
-                <span>Vulnerability Analysis</span>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%;"></div>
-                </div>
-            </li>
-            <li>
-                <span>Networking</span>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 80%;"></div>
-                </div>
-            </li>
-            <!-- Add more skills here -->
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Education</h2>
-        <p>Bachelor of Science in Advance Networking and Cyber Security</p>
-        <p>Brainware University • Kolkata, West Bengal • Graduated: July 2024</p>
-    </div>
-
-    <div class="section">
-        <h2>Certifications</h2>
-        <ul class="certifications-list">
-            <li>CEHv12 by EC-COUNCIL</li>
-            <li>Network Penetration Testing by ISOEH</li>
-            <li>Ethical Hacking by ISOEH</li>
-            <li>Network Essentials by CISCO</li>
-        </ul>
-    </div>
-
-    <div class="contact-section">
-        <h2>Get in Touch</h2>
-        <p>Interested in collaboration or want to discuss a project? Reach out to me!</p>
-        <a class="btn" href="mailto:kaifahmad793@gmail.com">CONTACT ME</a>
-    </div>
-
-    <div class="footer-container">
-        <p>© 2024 Kaif Ahmad</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/" target="_blank">Twitter</a>
-            <a href="https://www.appbrewery.co/" target="_blank">Website</a>
+    <section id="about">
+        <div class="content">
+            <h2>About Our Team</h2>
+            <p>We are a group of professionals dedicated to providing top-tier cybersecurity solutions and training to our clients.</p>
         </div>
-    </div>
+    </section>
 
-    <script src="js/scripts.js"></script>
+    <section id="services">
+        <h2>What We Offer</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3>Comprehensive Testing</h3>
+                <p>We identify and mitigate vulnerabilities in your systems efficiently.</p>
+            </div>
+            <div class="card">
+                <h3>Expert Training</h3>
+                <p>Our training programs are designed to educate your team on the latest security practices.</p>
+            </div>
+            <div class="card">
+                <h3>Custom Solutions</h3>
+                <p>We offer consulting to create custom security solutions for your specific needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Custom Site. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
